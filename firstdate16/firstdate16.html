@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<h1>Some Memorable Movies</h1>
+	<h3><span class="ital">first date</span> (Angelina Thor, 2022)</h3>
+	
+	
+	
+	<div class="sideBySide">
+	<img class="filmStill" onClick="onClick_DTRT_img01()" src="images/room.jpg" alt="room">
+	<img class="filmStill" onClick="onClick_DTRT_img02()" src="images/guide.jpg" alt="guide">
+	<img class="filmStill" onClick="onClick_DTRT_img03()" src="images/trash.jpg" alt="trash">
+	</div>
+	
+	<p class="filmInfo" id="DTRT_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea illo sint modi accusamus eligendi atque, asperiores numquam reiciendis architecto, optio, ipsam magni quia, animi adipisci soluta rem nobis debitis aspernatur repellat quidem. Nisi architecto quam, amet enim laboriosam adipisci repudiandae ullam ab blanditiis, itaque. Iste magnam atque doloribus, facere repellendus?</p>
+
+	<button type="button" onClick="gotoMovie()" id="gotoMovie_btn">Go to the movie</button>
+	
+</body>
+<script>
+
+var gotoMovie_btn=document.getElementById("gotoMovie_btn");
+	
+var img01_clicked = false;
+var img02_clicked = false;
+var img03_clicked = false;
+	
+var DTRT_text = document.getElementById("DTRT_text");
+gotoMovie_btn.style.visibility = "hidden";
+// MISSION IMPOSSIBLE section*******************************************************************************************************************************
+var DTRT_text = document.getElementById("DTRT_text"); 
+var DTRT00 = "first date is a film I did my Film 181 class. The idea for it stemmed from a video I was watching about the 2007 Hitman movie. There's a scene where the main character picks up a book call 'Men's Guide to Women' and I thought that was really funny. So I decided to a little animation about that. This was my first time animating in general, so it was an experience for me,"
+
+var DTRT01 = "Here you get a peek into the main character's room. He's supposed to be a younger muscian. The ones that still hang around his parents, hoping for his big break. His room is mainly empty, except for his music equipment. It's his obession, which is why he tells his parents he doesn't have time for girls, or a real job."
+
+var DTRT02 = "The book is based off of a real cover. In the film, his mom gives it to him as a gift. I imagine his parents to be the traditional Asian type. The ones that expect you to be a doctor and do good in school and a lot of grandchildren. Whether or not he uses it for it's function is up to the audience to decide."
+
+var DTRT03 = "Our young muscian is thrown into the back alley after a bad date. He goes home and lays down on the floor, still feeling like garbage. Then he spots that book! But there seems to be something else in it, a porno mag. I thought this was a pretty fitting end to the story. The story laid out itself pretty well."
+	
+DTRT_text.innerHTML = DTRT00;
+	
+function onClick_DTRT_img01(){
+	DTRT_text.innerHTML = DTRT01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+
+function onClick_DTRT_img02(){
+	DTRT_text.innerHTML = DTRT02;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+	
+function onClick_DTRT_img03(){
+	DTRT_text.innerHTML = DTRT03;
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}
+
+	
+	
+function revealButton(){
+	if (img01_clicked && img02_clicked && img03_clicked){
+		console.log("REVEAL BUTTON");
+		gotoMovie_btn.style.visibility = "visible";
+	}
+}
+
+function gotoMovie(){
+	window.open("https://www.youtube.com/watch?v=i33njofHrMw", "_blank");
+}
+</script>
+</html>
